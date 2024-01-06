@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "d36e2f9e-de98-421e-8a5d-c1995aae670d",
+		"name": "Nexa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "8967878"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testdata\",\r\n    \"password\": \"databaru\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Karyawan Add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"tes\",\r\n    \"address\": \"tes\",\r\n    \"birthdate\": \"2023-10-21\",\r\n    \"gender\": \"L\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/karyawan/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Karyawan List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/karyawan/list"
+			},
+			"response": []
+		},
+		{
+			"name": "Karyawan Edit",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"tes 2\",\r\n    \"address\": \"tes 2\",\r\n    \"birthdate\": \"2023-10-21\",\r\n    \"gender\": \"L\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/karyawan/update/:nip",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"karyawan",
+						"update",
+						":nip"
+					],
+					"variable": [
+						{
+							"key": "nip",
+							"value": "20240002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Karyawan Deactive",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"tes 2\",\r\n    \"address\": \"tes 2\",\r\n    \"birthdate\": \"2023-10-21\",\r\n    \"gender\": \"L\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/karyawan/deactive/:nip",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"karyawan",
+						"deactive",
+						":nip"
+					],
+					"variable": [
+						{
+							"key": "nip",
+							"value": "20240003"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RkYXRhIiwiaWF0IjoxNzA0NTE0OTM2LCJleHAiOjE3MDQ1MTQ5Mzl9.49vRezBRh-rH7Uvsq3yBitMc5BaFFC6ME_7KUAHuLLs",
+			"type": "string"
+		}
+	]
+}
